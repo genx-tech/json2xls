@@ -61,7 +61,7 @@ The following options are supported:
     - style: a styles xml file, see <https://github.com/functionscope/Node-Excel-Export>
     - fields: either an array or map containing field configuration:
         - array: a list of names of fields to be exported, in that order
-        - object: a map of names of fields to be exported and the types of those fields. Supported types are 'number','string','bool'
+        - object: a map of names of fields to be exported and the metas of those fields. Meta object includes caption and type. Supported types are 'number', 'string', 'bool' and 'date'
 
 Example:
 
@@ -81,6 +81,11 @@ Example:
     //export only the field 'poo' as string
     var xls = json2xls(json,{
         fields: {poo:'string'}
+    });
+
+    //export only the field 'poo' as string
+    var xls = json2xls(json,{
+        fields: {poo:{ caption: 'Poo', type:'string'}  }
     });
 
     fs.writeFileSync('data.xlsx', xls, 'binary');

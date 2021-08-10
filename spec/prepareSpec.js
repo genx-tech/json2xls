@@ -7,7 +7,7 @@ var weirdData = require('./weirdData');
 describe('prepare',function() {
 
     beforeEach(function() {
-        this.addMatchers({
+        jasmine.addMatchers({
             toEqualFields: function() {
                 return {
                     compare: function(actual,expected) {
@@ -95,6 +95,22 @@ describe('prepare',function() {
                     type: 'string'
                 },{
                     caption: 'name',
+                    type: 'string'
+                }]);
+            });
+
+            it('should create the correct cols when fields are given as object and field config is also an object',function() {
+                var res = prep(arrayData,{
+                    fields: {
+                        number: { caption: 'No.', type: 'string' },
+                        name: { caption: 'Name', type: 'string' }
+                    }
+                });
+                expect(res.cols).toEqualFields([{
+                    caption: 'No.',
+                    type: 'string'
+                },{
+                    caption: 'Name',
                     type: 'string'
                 }]);
             });

@@ -1,15 +1,18 @@
 {
-  "name": "json2xls",
-  "version": "0.1.2",
+  "name": "@genx/json2xls",
+  "version": "0.1.3",
   "description": "canonically transform json to an excel document",
   "main": "lib/json2xls.js",
   "scripts": {
-    "test": "jasmine-node spec"
+    "test": "jasmine"
   },
-  "repository": "https://github.com/rikkertkoppes/json2xls",
+  "repository": "https://github.com/genx-tech/json2xls",
   "author": "Rikkert Koppes <rikkert@rikkertkoppes.com",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "excel-export": "~0.3.11"
+    "excel-export": "^0.5.1"
+  },
+  "devDependencies": {
+    "jasmine": "^3.8.0"
   }
 }
