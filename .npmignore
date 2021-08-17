@@ -1,0 +1,5 @@
+# .npmignore 
+
+example
+spec
+.travis.yml
